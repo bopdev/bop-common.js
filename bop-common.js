@@ -1,1 +1,1 @@
-(function($){})(jQuery);
+!function(i){i("body").on("click","[data-bop-dismiss]",function(n){n.preventDefault();var t=i(this),s=t.data("bop-dismiss"),e=$dismissBtn.parents(s);return e.length?void e.css("display","none"):(e=t.parent().find(s),void(e.length&&e.css("display","none")))}).on("click","[data-bop-dismiss-with-wiping]",function(n){n.preventDefault();var t=i(this),s=t.data("bop-dismiss-with-wiping"),e=t.parents(s);return e.length?void e.remove():(e=t.parent().find(s),void(e.length&&e.remove()))})}(jQuery);
