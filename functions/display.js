@@ -5,6 +5,7 @@ var SELNS = 'bop-display';
 
 var DATA = {
   action:SELNS,
+  target:SELNS+'-target',
   hidden:NS+'.hidden'
 };
 var EVENT = {
@@ -16,8 +17,7 @@ var EVENT = {
   remove:'remove.'+NS
 };
 var SELECTOR = {
-  button:'data-'+SELNS,
-  target:'data-'+SELNS+'-target'
+  button:'[data-'+DATA.action+']'
 };
 var CLASSES = {
   hide:'bop-hide',
@@ -55,7 +55,7 @@ $('body').on(EVENT.click, SELECTOR.button, function(e){
     	    $el.removeClass(CLASSES.hide).addClass(CLASSES.hidden);
     	  });
     	}else{
-    	  $el.css('display', 'none');
+    	  $el.addClass(CLASSES.hidden);
     	}
     	
     	$el.data(DATA.hidden, true);
@@ -70,7 +70,7 @@ $('body').on(EVENT.click, SELECTOR.button, function(e){
     	    $el.removeClass(CLASSES.hidden).addClass(CLASSES.shown);
     	  });
     	}else{
-    	  $el.css('display', '');
+    	  $el.addClass(CLASSES.shown);
     	}
     	
     	$el.data(DATA.hidden, false);
