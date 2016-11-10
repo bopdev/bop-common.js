@@ -46,7 +46,7 @@
   $(document).ready(function(){
     function objectFitFix(){
       var $this = $(this);
-      $this.objectFitFix($this.data('object-fit')).css('object-fit', 'none');
+      $this.objectFitFix($this.data('object-fit'));
     }
     $('img[data-object-fit]').onceLoaded(objectFitFix);
     $(window).on('resize.object-fit.bop', function(){
